@@ -1,0 +1,5 @@
+model,accuracy_pct,params_total,params_nonzero,sparsity_pct,size_mb,macs_million,latency_ms_per_img,train_energy_kwh,train_co2_kg,infer_energy_kwh,infer_co2_kg
+Baseline (Teacher),81.09,1588618,1588618,0.0,6.077,97.03,0.72,0.00526232,0.00153031,0.00010014,2.912e-05
+Pruned (50%),83.03,1588618,795354,49.93,6.077,97.03,0.72,0.00253644,0.00073761,9.722e-05,2.827e-05
+Quantised (INT8 dyn.),81.0,537216,537216,0.0,3.071,95.98,0.723,0.0,0.0,0.00010419,3.03e-05
+Distilled Student,69.22,47978,47978,0.0,0.192,2.35,0.202,0.00444988,0.00129405,2.777e-05,8.07e-06

@@ -1,0 +1,80 @@
+{
+  "config": {
+    "seed": 42,
+    "data_dir": "./data",
+    "train_parquet": "./data/cifar10_train.parquet",
+    "test_parquet": "./data/cifar10_test.parquet",
+    "results_dir": "./results",
+    "country_iso_code": "IRL",
+    "batch_size": 128,
+    "epochs_teacher": 6,
+    "epochs_student": 6,
+    "epochs_prune_finetune": 3,
+    "lr": 0.001,
+    "train_subset": 0,
+    "test_subset": 0,
+    "prune_amount": 0.5,
+    "kd_temperature": 4.0,
+    "kd_alpha": 0.7,
+    "latency_batches": 20,
+    "num_workers": 0
+  },
+  "results": [
+    {
+      "model": "Baseline (Teacher)",
+      "accuracy_pct": 81.09,
+      "params_total": 1588618,
+      "params_nonzero": 1588618,
+      "sparsity_pct": 0.0,
+      "size_mb": 6.077,
+      "macs_million": 97.03,
+      "latency_ms_per_img": 0.72,
+      "train_energy_kwh": 0.00526232,
+      "train_co2_kg": 0.00153031,
+      "infer_energy_kwh": 0.00010014,
+      "infer_co2_kg": 2.912e-05
+    },
+    {
+      "model": "Pruned (50%)",
+      "accuracy_pct": 83.03,
+      "params_total": 1588618,
+      "params_nonzero": 795354,
+      "sparsity_pct": 49.93,
+      "size_mb": 6.077,
+      "macs_million": 97.03,
+      "latency_ms_per_img": 0.72,
+      "train_energy_kwh": 0.00253644,
+      "train_co2_kg": 0.00073761,
+      "infer_energy_kwh": 9.722e-05,
+      "infer_co2_kg": 2.827e-05
+    },
+    {
+      "model": "Quantised (INT8 dyn.)",
+      "accuracy_pct": 81.0,
+      "params_total": 537216,
+      "params_nonzero": 537216,
+      "sparsity_pct": 0.0,
+      "size_mb": 3.071,
+      "macs_million": 95.98,
+      "latency_ms_per_img": 0.723,
+      "train_energy_kwh": 0.0,
+      "train_co2_kg": 0.0,
+      "infer_energy_kwh": 0.00010419,
+      "infer_co2_kg": 3.03e-05
+    },
+    {
+      "model": "Distilled Student",
+      "accuracy_pct": 69.22,
+      "params_total": 47978,
+      "params_nonzero": 47978,
+      "sparsity_pct": 0.0,
+      "size_mb": 0.192,
+      "macs_million": 2.35,
+      "latency_ms_per_img": 0.202,
+      "train_energy_kwh": 0.00444988,
+      "train_co2_kg": 0.00129405,
+      "infer_energy_kwh": 2.777e-05,
+      "infer_co2_kg": 8.07e-06
+    }
+  ]
+}
